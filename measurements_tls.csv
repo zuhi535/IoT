@@ -1,0 +1,6 @@
+recv_time,topic,payload
+2025-12-10T02:09:08.907608,iot/lab/testsensor/temperature,"{""sensor_id"": ""testsensor_tls"", ""ts_device"": 1765332548906, ""temperature"": 20}"
+2025-12-10T02:09:09.922353,iot/lab/testsensor/temperature,"{""sensor_id"": ""testsensor_tls"", ""ts_device"": 1765332549921, ""temperature"": 21}"
+2025-12-10T02:09:10.933015,iot/lab/testsensor/temperature,"{""sensor_id"": ""testsensor_tls"", ""ts_device"": 1765332550932, ""temperature"": 22}"
+2025-12-10T02:09:11.946141,iot/lab/testsensor/temperature,"{""sensor_id"": ""testsensor_tls"", ""ts_device"": 1765332551944, ""temperature"": 23}"
+2025-12-10T02:09:12.948802,iot/lab/testsensor/temperature,"{""sensor_id"": ""testsensor_tls"", ""ts_device"": 1765332552947, ""temperature"": 24}"
