@@ -2,18 +2,13 @@
 #include <PubSubClient.h>
 
 // --- WiFi beállítások ---
-// Wokwi-ban a virtuális WiFi neve: "Wokwi-GUEST", nincs jelszó
 const char* ssid     = "Wokwi-GUEST";
 const char* password = "";
 
 // --- MQTT broker ---
-// Kezdésnek használjuk a publikus test.mosquitto.org brokert
-// (csak normál forgalomra, NEM támadásra!)
-// Később átírjuk a SAJÁT brokered címére.
 const char* mqtt_server = "test.mosquitto.org";
 const int   mqtt_port   = 1883;
 
-// Globális kliensek
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -34,17 +29,13 @@ void setupWifi() {
 }
 
 void reconnect() {
-  // Loop until we're reconnected
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    // Client ID legyen egyedi
     String clientId = "esp32-sensor1-";
     clientId += String(random(0xffff), HEX);
 
-    // Nincs user/pass egyelőre
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      // Ha akarnál subscribe-olni, itt tennéd meg.
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -58,7 +49,7 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
 
-  randomSeed(analogRead(0));  // véletlenszám a hőmérséklethez
+  randomSeed(analogRead(0));
 
   setupWifi();
 
@@ -72,10 +63,10 @@ void loop() {
   client.loop();
 
   unsigned long now = millis();
-  if (now - lastMsg > 5000) { // 5 másodpercenként küldünk egy mérést
+  if (now - lastMsg > 5000) {
     lastMsg = now;
 
-    int temperature = random(20, 30); // 20–29°C közötti random érték
+    int temperature = random(20, 30);
 
     char payload[128];
     snprintf(payload, sizeof(payload),
