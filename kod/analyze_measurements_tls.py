@@ -13,21 +13,16 @@ def parse_row(row):
     topic = row["topic"]
     payload_str = row["payload"]
 
-    # recv_time ISO formátum -> datetime
     try:
         recv_time = datetime.fromisoformat(recv_time_str)
     except ValueError:
-        # Ha valami hibás, átugorjuk
         return None
 
-    # payload JSON parsolása
     try:
         data = json.loads(payload_str)
     except json.JSONDecodeError:
-        # pl. a teljesen sima számok / régi formátumok: kihagyjuk
         return None
 
-    # Ha a payload nem objektum (hanem pl. szám vagy lista), azt is kihagyjuk
     if not isinstance(data, dict):
         return None
 
@@ -57,7 +52,7 @@ def main():
         for row in reader:
             parsed = parse_row(row)
             if parsed is None:
-                continue  # hibás / régi formátumú sorokat átugorjuk
+                continue
 
             sensor_id = parsed["sensor_id"]
             recv_time = parsed["recv_time"]
@@ -66,17 +61,14 @@ def main():
             s = stats[sensor_id]
             s["count"] += 1
 
-            # hőmérséklet gyűjtése
             if isinstance(temp, (int, float)):
                 s["temps"].append(temp)
 
-            # első / utolsó üzenet időpontja
             if s["first"] is None or recv_time < s["first"]:
                 s["first"] = recv_time
             if s["last"] is None or recv_time > s["last"]:
                 s["last"] = recv_time
 
-    # Eredmények kiírása szenzoronként
     for sensor_id, s in stats.items():
         print(f"=== {sensor_id} ===")
         print(f"Üzenetek száma: {s['count']}")
@@ -95,7 +87,7 @@ def main():
         else:
             print("Nincsenek értelmezhető hőmérsékleti adatok.")
 
-        print()  # üres sor a blokkok közé
+        print()
 
 
 if __name__ == "__main__":
