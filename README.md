@@ -38,8 +38,8 @@ A projekt célja egy IoT-rendszer **biztonsági vizsgálata** szimulált környe
     ├── sensor1/
     │   └── sketch.ino               # Wokwi ESP32 "sensor1" kódja (MQTT publisher)
     │   └── diagram.json             # Wokwi ESP32 sensor másolásának kódja
-    │   └── libraries.txt            # Hozzá tartozó könyvtárak
+    │   └── libraries.txt            # Hozzátartozó könyvtárak
     └── sensor2/
         └── sketch.ino               # Wokwi ESP32 "sensor2" kódja (MQTT publisher)
         └── diagram.json             # Wokwi ESP32 sensor másolásának kódja
-        └── libraries.txt            # Hozzá tartozó könyvtárak
+        └── libraries.txt            # Hozzátartozó könyvtárak
