@@ -4,11 +4,10 @@ from datetime import datetime
 
 BROKER = "test.mosquitto.org"
 PORT = 1883
-TOPIC = "iot/lab/#"   # minden labos topicra feliratkozunk
+TOPIC = "iot/lab/#"
 
 CSV_FILE = "measurements.csv"
 
-# Megnyitjuk a CSV-t és kiírjuk a fejlécet, ha új fájl
 csv_file = open(CSV_FILE, mode="w", newline="", encoding="utf-8")
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(["recv_time", "topic", "payload"])
@@ -23,9 +22,8 @@ def on_message(client, userdata, msg):
     payload = msg.payload.decode("utf-8")
     print(f"[{recv_time}] Topic: {msg.topic} | Payload: {payload}")
 
-    # Logolás CSV-be
     csv_writer.writerow([recv_time, msg.topic, payload])
-    csv_file.flush()  # hogy azonnal lemezre kerüljön
+    csv_file.flush()
 
 client = mqtt.Client()
 client.on_connect = on_connect
