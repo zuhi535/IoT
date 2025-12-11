@@ -86,7 +86,6 @@ def main():
             print(f"Átlagos hőmérséklet: {avg_temp:.2f} °C")
         else:
             print("Nincsenek értelmezhető hőmérsékleti adatok.")
-
         print()
 
 
