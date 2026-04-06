@@ -24,7 +24,6 @@ def parse_row(row):
     try:
         data = json.loads(payload_str)
     except json.JSONDecodeError:
-        # pl. a teljesen sima számok / régi formátumok: kihagyjuk
         return None
 
     # Ha a payload nem objektum (hanem pl. szám vagy lista), azt is kihagyjuk
