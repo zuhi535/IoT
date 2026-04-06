@@ -30,7 +30,6 @@ def on_message(client, userdata, msg):
 
 client = mqtt.Client()
 
-# !!! CALLBACKEK BEÁLLÍTÁSA !!!
 client.on_connect = on_connect
 client.on_message = on_message
 
@@ -42,7 +41,6 @@ client.tls_set(
     tls_version=ssl.PROTOCOL_TLS_CLIENT,
 )
 
-# ha nagyon szigorú lenne a cert-ellenőrzés, ideiglenesen bekapcsolható:
 # client.tls_insecure_set(True)
 
 client.connect(BROKER, PORT, 60)
