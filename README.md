@@ -14,7 +14,9 @@ A projekt főbb elemei:
 - egyszerű MI-alapú anomáliadetektálási kísérlet
 
 ---
-
+Wokwi_sersor_1:https://wokwi.com/projects/449908585893820417
+Wokwi_sersor_2:https://wokwi.com/projects/449908624240245761
+---
 ## Könyvtárstruktúra
 
 ```text
