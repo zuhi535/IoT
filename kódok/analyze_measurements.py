@@ -57,7 +57,7 @@ def main():
         for row in reader:
             parsed = parse_row(row)
             if parsed is None:
-                continue  # hibás / régi formátumú sorokat átugorjuk
+                continue
 
             sensor_id = parsed["sensor_id"]
             recv_time = parsed["recv_time"]
@@ -95,7 +95,7 @@ def main():
         else:
             print("Nincsenek értelmezhető hőmérsékleti adatok.")
 
-        print()  # üres sor a blokkok közé
+        print()
 
 
 if __name__ == "__main__":
