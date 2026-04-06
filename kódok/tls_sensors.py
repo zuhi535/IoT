@@ -5,7 +5,7 @@ import random
 
 import paho.mqtt.client as mqtt
 
-BROKER = "localhost"   # ugyanaz, mint a TLS-es Mosquitto configban
+BROKER = "localhost"
 PORT   = 8883
 
 TOPICS = {
@@ -53,8 +53,7 @@ def main():
             print(f"Publishing to {topic}: {payload_str}")
             client.publish(topic, payload_str)
 
-        # itt tudod szabályozni a rátát
-        time.sleep(5.0)  # kb. 1 üzenet / s / szenzor
+        time.sleep(5.0)
 
     print("Done.")
     client.disconnect()
