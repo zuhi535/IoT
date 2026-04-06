@@ -17,14 +17,12 @@ def parse_row(row):
     try:
         recv_time = datetime.fromisoformat(recv_time_str)
     except ValueError:
-        # Ha valami hibás, átugorjuk
         return None
 
     # payload JSON parsolása
     try:
         data = json.loads(payload_str)
     except json.JSONDecodeError:
-        # pl. a teljesen sima számok / régi formátumok: kihagyjuk
         return None
 
     # Ha a payload nem objektum (hanem pl. szám vagy lista), azt is kihagyjuk
@@ -57,7 +55,7 @@ def main():
         for row in reader:
             parsed = parse_row(row)
             if parsed is None:
-                continue  # hibás / régi formátumú sorokat átugorjuk
+                continue
 
             sensor_id = parsed["sensor_id"]
             recv_time = parsed["recv_time"]
@@ -95,7 +93,7 @@ def main():
         else:
             print("Nincsenek értelmezhető hőmérsékleti adatok.")
 
-        print()  # üres sor a blokkok közé
+        print()
 
 
 if __name__ == "__main__":
