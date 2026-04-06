@@ -33,7 +33,6 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-# TLS beállítás - a ca.crt ugyanebben a mappában van
 client.tls_set(
     ca_certs="ca.crt",
     certfile=None,
