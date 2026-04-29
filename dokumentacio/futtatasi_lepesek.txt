@@ -1,0 +1,54 @@
+IoT Security szakdolgozati melléklet – futtatási lépések
+
+1. Általános környezet
+- Operációs rendszer: Windows
+- Python verzió: 3.9
+- MQTT broker: Eclipse Mosquitto
+- Wokwi: online ESP32 szimuláció
+
+2. Szükséges Python-csomagok telepítése
+A dokumentacio/requirements.txt alapján:
+py -3.9 -m pip install -r requirements.txt
+
+3. Titkosítatlan mérés futtatása
+3.1. MQTT broker indítása titkosítatlan módban
+3.2. collector.py indítása
+3.3. Wokwi sensor1 és sensor2 projektek indítása
+3.4. A mérés leállítása után az eredmények a measurements.csv állományba kerülnek
+3.5. Kiértékelés:
+py -3.9 analyze_measurements.py
+
+4. TLS-es mérés futtatása
+4.1. TLS-es Mosquitto broker indítása
+4.2. collector_tls.py indítása
+4.3. Wokwi sensor1 és sensor2 projektek indítása TLS-es brokerre állítva
+4.4. A mérés leállítása után az eredmények a measurements_tls.csv állományba kerülnek
+4.5. Kiértékelés:
+py -3.9 analyze_measurements_tls.py
+
+5. Tesztpublikálás
+- Titkosítatlan teszt: pub_test.py
+- TLS-es teszt: pub_test_tls.py
+- Megfigyelő kliens: subscriber.py
+
+6. Támadásos mérés
+6.1. TLS-es Mosquitto broker indítása
+6.2. collector_tls.py indítása
+6.3. Wokwi sensor1 és sensor2 indítása
+6.4. attack_publisher_tls.py indítása
+6.5. A támadói minták külön CSV-be menthetők
+6.6. Szükség esetén a normál és támadói minták egyesítése:
+py -3.9 create_mixed_attack_dataset.py
+
+7. MI-alapú anomáliadetektálás
+A modell futtatása:
+py -3.9 ml_anomaly_detector.py measurements_normal.csv measurements_attack.csv
+
+8. Wokwi projektek
+A wokwi_sensorok/sensor1 és wokwi_sensorok/sensor2 mappák tartalmazzák:
+- sketch.ino
+- diagram.json
+- libraries.txt
+
+9. Megjegyzés
+A mellékletben szereplő fájlok a szakdolgozatban bemutatott laboratóriumi, szimulált környezet reprodukálására szolgálnak.
