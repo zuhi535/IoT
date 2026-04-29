@@ -59,5 +59,3 @@ A melléklethez tartozó kiegészítő leírások.
 ## Megjegyzés
 A projekt laboratóriumi, szimulált környezetben készült.  
 A dolgozatban szereplő mérések és tesztek kontrollált környezetben történtek.
-
-A fejlesztési és hibakeresési folyamat során generatív MI-alapú segédeszköz is alkalmazásra került, ugyanakkor a mellékletben szereplő kódok véglegesítése, futtatása és ellenőrzése saját validáció mellett történt.
