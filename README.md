@@ -55,6 +55,7 @@ A melléklethez tartozó kiegészítő leírások.
 - `README.md`
 - `requirements.txt`
 - `futtatasi_lepesek.txt`
+Wokwi_sersor_1:https://wokwi.com/projects/449908585893820417 Wokwi_sersor_2:https://wokwi.com/projects/449908624240245761
 
 ## Megjegyzés
 A projekt laboratóriumi, szimulált környezetben készült.  
