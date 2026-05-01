@@ -20,7 +20,6 @@ A projekt célja egy MQTT-alapú IoT környezet szimulációja, a titkosítatlan
 
 ### `szakdolgozat/`
 A szakdolgozat végleges dokumentumai.
-- `szakdolgozat_iot.pdf`
 - `szakdolgozat_iot.odt`
 
 ### `forraskod/`
