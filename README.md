@@ -1,30 +1,29 @@
-# IoT Security szakdolgozati melléklet
+# IoT Security Thesis Supplement
 
-## A szakdolgozat címe
-**IoT security: támadási felületek azonosítása és védelmi mechanizmusok fejlesztése**  
-**IoT eszközök sebezhetőségi elemzése, biztonságos hálózati protokollok alkalmazása**
+## Thesis title
+**IoT Security: Identification of Attack Surfaces and Development of Defense Mechanisms**  
+**Vulnerability Analysis of IoT Devices and Application of Secure Network Protocols**
 
-## A melléklet célja
-Ez a melléklet a szakdolgozat gyakorlati részéhez kapcsolódó forráskódokat, mérési állományokat, Wokwi-projekteket és kiegészítő dokumentációt tartalmazza.
+## Purpose of the supplement
+This supplement contains the source codes, measurement files, Wokwi projects, and additional documentation related to the practical part of the thesis.
 
-A projekt célja egy MQTT-alapú IoT környezet szimulációja, a titkosítatlan és TLS 1.3-mal védett kommunikáció összehasonlítása, támadási szcenáriók vizsgálata, valamint egy egyszerű MI-alapú anomáliadetektálási kísérlet bemutatása.
+The aim of the project is to simulate an MQTT-based IoT environment, compare unencrypted communication with communication protected by TLS 1.3, examine attack scenarios, and demonstrate a simple AI-based anomaly detection experiment.
 
-## Használt környezet
-- Operációs rendszer: Windows
-- Python verzió: 3.9
+## Environment used
+- Operating system: Windows
+- Python version: 3.9
 - MQTT broker: Eclipse Mosquitto
-- Szimulációs környezet: Wokwi
-- Virtuális eszközök: ESP32
+- Simulation environment: Wokwi
+- Virtual devices: ESP32
 
-## A melléklet fő részei
+## Main parts of the supplement
 
 ### `szakdolgozat/`
-A szakdolgozat végleges dokumentumai.
-- `szakdolgozat_iot.pdf`
+Final thesis documents.
 - `szakdolgozat_iot.odt`
 
 ### `forraskod/`
-A mérési backendhez, elemzéshez és kiegészítő vizsgálatokhoz használt Python szkriptek.
+Python scripts used for the measurement backend, analysis, and additional examinations.
 - `collector.py`
 - `collector_tls.py`
 - `analyze_measurements.py`
@@ -38,7 +37,7 @@ A mérési backendhez, elemzéshez és kiegészítő vizsgálatokhoz használt P
 - `ca.crt`
 
 ### `meresi_adatok/`
-A mérési és tesztfuttatások eredményei.
+Results of measurements and test runs.
 - `measurements.csv`
 - `measurements_tls.csv`
 - `measurements_normal.csv`
@@ -46,18 +45,16 @@ A mérési és tesztfuttatások eredményei.
 - `measurements_attack_only.csv`
 
 ### `wokwi_sensorok/`
-A Wokwi-ban futtatott két ESP32-alapú szenzorprojekt.
+Two ESP32-based sensor projects executed in Wokwi.
 - `sensor1/`
 - `sensor2/`
 
 ### `dokumentacio/`
-A melléklethez tartozó kiegészítő leírások.
+Additional documentation related to the supplement.
 - `README.md`
 - `requirements.txt`
 - `futtatasi_lepesek.txt`
 
-## Megjegyzés
-A projekt laboratóriumi, szimulált környezetben készült.  
-A dolgozatban szereplő mérések és tesztek kontrollált környezetben történtek.
-
-A fejlesztési és hibakeresési folyamat során generatív MI-alapú segédeszköz is alkalmazásra került, ugyanakkor a mellékletben szereplő kódok véglegesítése, futtatása és ellenőrzése saját validáció mellett történt.
+## Note
+The project was created in a laboratory-based, simulated environment.  
+The measurements and tests presented in the thesis were carried out under controlled conditions.
