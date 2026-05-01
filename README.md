@@ -20,7 +20,6 @@ The aim of the project is to simulate an MQTT-based IoT environment, compare une
 
 ### `szakdolgozat/`
 Final thesis documents.
-- `szakdolgozat_iot.pdf`
 - `szakdolgozat_iot.odt`
 
 ### `forraskod/`
